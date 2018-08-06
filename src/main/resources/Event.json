@@ -1,0 +1,12 @@
+{
+	"name": "iottestevent",
+	"header": {
+		"timeseries" : 0,
+		"connectorid": 1111,
+		"deviceid": 111,
+		"eventtime": "2018-07-20 13:20:00.000"
+	},
+	"values": {
+		"status": "Active"
+	}
+}

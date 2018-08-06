@@ -1,0 +1,20 @@
+{
+	"name": "iottesttimeseries",
+	"header": {
+		"timeseries" : 1,
+		"connectorid": 1111,
+		"deviceid": 111,
+		"eventtime": "2018-07-20 13:20:00.000"
+	},
+	"iotdata":{  
+	"values": [{
+			"variableid": 1,
+			"value": "20"
+		},
+		{
+			"variableid": 2,
+			"value": "30"
+		}
+	]
+	}
+}
