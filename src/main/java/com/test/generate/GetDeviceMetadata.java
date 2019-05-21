@@ -15,16 +15,18 @@ import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.client.Table;
 import org.apache.hadoop.hbase.util.Bytes;
 
+import com.common.utils.SetTestProperties;
+
 public class GetDeviceMetadata {
 	List<MetadataPOJO> metadatalist = new ArrayList<MetadataPOJO>();
 
 	public List<MetadataPOJO> getmetadata() throws IOException {
-		
-		String zkQuorum = "clouderavm01.centralindia.cloudapp.azure.com,clouderavm02.centralindia.cloudapp.azure.com,clouderavm03.centralindia.cloudapp.azure.com";
-		String tableName = "IOTMETADATA";
+		SetTestProperties properties = new SetTestProperties();
+		String zkQuorum = properties.zkQuorum;
+		String tableName = properties.metadatatablename;
 		Configuration conf = HBaseConfiguration.create();
 		conf.set("hbase.zookeeper.quorum", zkQuorum);
-		conf.set("hbase.zookeeper.property.clientPort", "2181");
+		conf.set("hbase.zookeeper.property.clientPort", properties.zkport);
 		Connection connection = null;
 		Table table = null;
 		try {
